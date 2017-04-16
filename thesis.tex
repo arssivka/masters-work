@@ -1,0 +1,89 @@
+\title{Пояснительная записка}
+\author{Ивин А. Г.}
+\date{2015-05-10}
+
+\thispagestyle{empty}
+\documentclass[12pt,a4paper]{report}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{textcomp}
+\usepackage{pscyr}
+\usepackage{setspace}
+\usepackage{hyperref}
+\usepackage{indentfirst}
+\usepackage{listings}
+
+% Настройка оглавления
+\usepackage{tocloft}
+\renewcommand{\cfttoctitlefont}{\hfil\normalfont\bfseries\MakeUppercase}
+\setlength{\cftbeforetoctitleskip}{0pt}
+\setlength{\cftaftertoctitleskip}{28pt}
+\renewcommand{\cftpartleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftchapfont}{\normalfont}   
+\renewcommand{\cftsecfont}{\normalfont}
+\renewcommand{\cftchappagefont}{\normalfont}
+\renewcommand{\cftsecpagefont}{\normalfont}
+
+% Шрифт заголовков глав и разделов
+\usepackage{titlesec}
+\titleformat{\chapter}
+  {\normalfont\sffamily\bfseries\centering}
+  {\thechapter\ }{0pt}{}
+\titleformat{\section}
+  {\normalfont\sffamily\bfseries\centering}
+  {\thesection\ }{0pt}{}
+\titlespacing*{\chapter}{0pt}{0pt}{*8}
+
+% Отключение создания новой страницы для глав
+%\makeatletter
+%\renewcommand\chapter{\thispagestyle{plain}%
+%\global\@topnum\z@
+%\@afterindentfalse
+%\secdef\@chapter\@schapter}
+%\makeatother 
+
+\usepackage{geometry}
+\geometry{left=2cm}
+\geometry{right=1.5cm}
+\geometry{top=2cm}
+\geometry{bottom=3cm}
+
+\frenchspacing
+\pagestyle{plain}
+
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+
+\usepackage{graphicx}
+\graphicspath{{images/}}
+
+\usepackage{courier}
+\lstset{
+    basicstyle = \fontsize{11}{13}\selectfont   \ttfamily,
+    keywordstyle = \bfseries,
+    keepspaces = true,
+    breaklines = true,
+    framextopmargin = 50pt,
+}
+
+\begin{document}
+    \include{thesis-title}
+    \include{thesis-control}
+    \setcounter{page}{1}
+    \tableofcontents
+    
+    \parindent 10mm
+    \parskip=3mm
+    \begin{spacing}{1.5}
+        \include{thesis-intro}
+        \include{thesis-chapter1}
+        \include{thesis-chapter2}
+        \include{thesis-conclusion}
+    \end{spacing}
+    \include{thesis-bibliography}
+\end{document}
