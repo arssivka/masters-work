@@ -1,9 +1,10 @@
 \title{Пояснительная записка}
 \author{Ивин А. Г.}
-\date{2015-05-10}
+\date{2017-05-10}
 
 \thispagestyle{empty}
 \documentclass[12pt,a4paper]{report}
+\usepackage[14pt]{extsizes}
 \usepackage[T2A]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[english,russian]{babel}
@@ -16,6 +17,9 @@
 \usepackage{hyperref}
 \usepackage{indentfirst}
 \usepackage{listings}
+\usepackage{tabularx}
+
+\usepackage[labelsep=period]{caption}
 
 % Настройка оглавления
 \usepackage{tocloft}
@@ -33,11 +37,14 @@
 \usepackage{titlesec}
 \titleformat{\chapter}
   {\normalfont\sffamily\bfseries\centering}
-  {\thechapter\ }{0pt}{}
+  {Глава \thechapter.\ }{0pt}{}
 \titleformat{\section}
   {\normalfont\sffamily\bfseries\centering}
   {\thesection\ }{0pt}{}
-\titlespacing*{\chapter}{0pt}{0pt}{*8}
+\titleformat{\subsection}
+  {\normalfont\sffamily\bfseries\centering}
+  {\thesubsection\ }{0pt}{}
+\titlespacing*{\chapter}{0pt}{0pt}{*4}
 
 % Отключение создания новой страницы для глав
 %\makeatletter
@@ -83,6 +90,7 @@
         \include{thesis-intro}
         \include{thesis-chapter1}
         \include{thesis-chapter2}
+        \include{thesis-chapter3}
         \include{thesis-conclusion}
     \end{spacing}
     \include{thesis-bibliography}
