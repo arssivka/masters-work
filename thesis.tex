@@ -33,15 +33,24 @@
 \renewcommand{\cftchappagefont}{\normalfont}
 \renewcommand{\cftsecpagefont}{\normalfont}
 
+% Номера в библиографии
+\makeatletter
+\renewcommand{\@biblabel}[1]{#1.}
+\makeatother
+
+% Отступы в списках
+\usepackage{enumitem}
+\setlist{nolistsep}
+
 % Шрифт заголовков глав и разделов
 \usepackage{titlesec}
-\titleformat{\chapter}
+\titleformat{\chapter}[block]
   {\normalfont\sffamily\bfseries\centering}
   {Глава \thechapter.\ }{0pt}{}
-\titleformat{\section}
+\titleformat{\section}[block]
   {\normalfont\sffamily\bfseries\centering}
   {\thesection\ }{0pt}{}
-\titleformat{\subsection}
+\titleformat{\subsection}[block]
   {\normalfont\sffamily\bfseries\centering}
   {\thesubsection\ }{0pt}{}
 \titlespacing*{\chapter}{0pt}{0pt}{*4}
@@ -66,6 +75,7 @@
 \setcounter{secnumdepth}{2}
 \setcounter{tocdepth}{2}
 
+% Настройка пакета для изображений
 \usepackage{graphicx}
 \graphicspath{{images/}}
 
