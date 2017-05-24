@@ -79,6 +79,10 @@
 \usepackage{graphicx}
 \graphicspath{{images/}}
 
+% Пакет для переноса слов
+\usepackage{hyphenat}
+\usepackage{microtype}
+
 \usepackage{courier}
 \lstset{
     basicstyle = \fontsize{11}{13}\selectfont   \ttfamily,
@@ -97,11 +101,13 @@
     \parindent 10mm
     \parskip=3mm
     \begin{spacing}{1.5}
-        \include{thesis-intro}
-        \include{thesis-chapter1}
-        \include{thesis-chapter2}
-        \include{thesis-chapter3}
-        \include{thesis-conclusion}
+        \begin{sloppypar}
+            \include{thesis-intro}
+            \include{thesis-chapter1}
+            \include{thesis-chapter2}
+            \include{thesis-chapter3}
+            \include{thesis-conclusion}
+        \end{sloppypar}
     \end{spacing}
     \include{thesis-bibliography}
 \end{document}
